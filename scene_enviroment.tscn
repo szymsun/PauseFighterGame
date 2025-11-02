@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://fphpmti2pank"]
+
+[node name="SceneEnviroment" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.19835874, 0.9801295, 0, -0.9801295, -0.19835874, 0, 0, 0)
+shadow_enabled = true

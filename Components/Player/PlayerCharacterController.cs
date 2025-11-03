@@ -1,5 +1,6 @@
 using Godot;
-using System;
+
+namespace PauseFighterGame.Components.Player;
 
 public partial class PlayerCharacterController : CharacterBody3D
 {
@@ -19,22 +20,17 @@ public partial class PlayerCharacterController : CharacterBody3D
         MoveAndSlide();
     }
 
-    public override void _Input(InputEvent @event)
-    {
-        
-    }
-
     public override void _Process(double delta)
     {
         _moveInput = Input.GetVector("character_move_backward", "character_move_forward",
             "character_move_right", "character_move_left");
         _moveVector = (Vector3.Forward * _moveInput.X + Vector3.Left * _moveInput.Y) * Speed * (float)delta;
-        GD.Print(GetDirection());
+        // GD.Print(GetDirection());
     }
 
     public float GetDirection()
     {
-        return float.Atan2Pi(_moveInput.Y, _moveInput.X);
+        return float.Atan2Pi(_moveInput.Y, _moveInput.X) * 180f;
     }
 
 }
